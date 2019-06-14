@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {VueLoaderPlugin} = require('vue-loader');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: {
@@ -8,9 +8,10 @@ module.exports = {
   },
 
   resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    }
+    extensions: [
+      '.js',
+      '.vue'
+    ]
   },
 
   module: {
@@ -38,7 +39,10 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
+        options: {
+          name: 'images/[name].[ext]',
+        }
       }
     ]
   },
