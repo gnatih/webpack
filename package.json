@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hide-modules --hot --config webpack.dev.js",
-    "build": "webpack --hide-modules --config webpack.prod.js"
+    "dev": "webpack-dev-server --no-progress --hide-modules --hot --config webpack.dev.js",
+    "build": "webpack --hide-modules --no-progress --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
